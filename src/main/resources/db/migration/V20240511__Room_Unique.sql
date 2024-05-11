@@ -1,0 +1,1 @@
+ALTER TABLE room ADD CONSTRAINT UC_room_name UNIQUE(name);

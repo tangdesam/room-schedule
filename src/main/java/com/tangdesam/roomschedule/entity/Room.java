@@ -1,8 +1,7 @@
 package com.tangdesam.roomschedule.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
@@ -16,7 +15,9 @@ public class Room {
     private String id;
 
     @NotEmpty
+    @Column(unique = true)
     private String name;
 
+    @Min(value = 2)
     private int capacity;
 }
