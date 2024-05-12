@@ -1,0 +1,38 @@
+<input type="hidden" th:field="*{id}"/>
+
+<div class="col-xs-12 col-sm-6">
+    <label for="text" class="form-label">Room</label>
+    <select class="form-control" th:field="*{room}">
+        <option th:each="room : ${roomList}" th:value="${room.id}" th:text="${room.name}" ></option>
+    </select>
+    <span th:if="${#fields.hasErrors('room')}" th:errors="*{room}" class="text-danger"></span>
+    <br/>
+</div>
+
+<div class="col-xs-12 col-sm-6">
+    <label for="text" class="form-label">Meeting Topic</label>
+    <input type="text" class="form-control" th:field="*{meetingTopic}" placeholder="i.e Monthly Meeting" />
+    <span th:if="${#fields.hasErrors('meetingTopic')}" th:errors="*{meetingTopic}" class="text-danger"></span>
+    <br/>
+</div>
+
+<div class="col-xs-12 col-sm-6">
+    <label for="text" class="form-label">PIC</label>
+    <input type="text" class="form-control" th:field="*{pic}" placeholder="Person in charge" />
+    <span th:if="${#fields.hasErrors('pic')}" th:errors="*{pic}" class="text-danger"></span>
+    <br/>
+</div>
+
+<div class="col-xs-12 col-sm-6">
+    <label for="text" class="form-label">Start Time</label>
+    <input type="datetime-local" class="form-control" th:field="*{startTime}"  />
+    <span th:if="${#fields.hasErrors('startTime')}" th:errors="*{startTime}" class="text-danger"></span>
+    <br/>
+</div>
+
+<div class="col-xs-12 col-sm-6">
+    <label for="text" class="form-label">End Time</label>
+    <input type="datetime-local" class="form-control" th:field="*{endTime}"  />
+    <span th:if="${#fields.hasErrors('endTime')}" th:errors="*{endTime}" class="text-danger"></span>
+    <br/>
+</div>

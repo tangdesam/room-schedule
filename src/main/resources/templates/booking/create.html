@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"
+      layout:decorate="~{shared/layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create New Booking</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <h1>Create New Booking</h1>
+
+    <form th:action="@{/booking/save}" th:object="${booking}" method="post">
+        <div th:insert="~{/booking/_form}"></div>
+        <input type="submit" class="btn btn-primary" value="save"/>
+    </form>
+
+</div>
+</body>
+</html>
